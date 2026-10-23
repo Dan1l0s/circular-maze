@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Two search fronts find the shortest route through a circular maze.">
+  <title>Circular maze · Dan1l0s</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Circular maze</h1>
+      <a href="https://github.com/Dan1l0s/circular-maze">Dan1l0s</a>
+    </header>
+    <canvas id="canvas" width="700" height="440" role="img" aria-label="Two search fronts explore a circular maze and trace the shortest route between opposite sides."></canvas>
+    <div class="controls">
+      <button id="play" type="button" aria-pressed="false">Play</button>
+      <button id="restart" type="button">Restart</button>
+      <label class="theme">Theme
+        <select id="theme">
+          <option value="system">System</option>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      </label>
+    </div>
+    <div class="timeline">
+      <label class="sr-only" for="timeline">Animation time</label>
+      <input id="timeline" type="range" min="0" max="24" step="0.05" value="21.8">
+      <output id="time" for="timeline">21.8 / 24 s</output>
+    </div>
+    <p id="status"></p>
+  </main>
+</body>
+</html>

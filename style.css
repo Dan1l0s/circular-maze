@@ -1,0 +1,55 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#ffffff, #0d1117);
+  --fg: light-dark(#1f2328, #e6edf3);
+  --muted: light-dark(#68727e, #8b949e);
+  --line: light-dark(#d0d7de, #30363d);
+  --accent: light-dark(#267da4, #7bc9e8);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 14px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(100% - 40px, 980px); margin: 32px auto; }
+header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+h1 { margin: 0; font-size: 16px; font-weight: 500; }
+a { color: var(--muted); text-decoration: none; }
+a:hover { color: var(--fg); }
+canvas { display: block; width: 100%; aspect-ratio: 700 / 440; margin: 16px 0; }
+.controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+button, select {
+  font: inherit;
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  min-height: 36px;
+  padding: 6px 12px;
+}
+button { cursor: pointer; }
+button:hover { border-color: var(--muted); }
+button:focus-visible, select:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.theme { display: flex; align-items: center; gap: 8px; margin-left: auto; color: var(--muted); }
+.timeline { display: flex; align-items: center; gap: 16px; margin-top: 18px; }
+input[type="range"] { flex: 1; min-width: 0; margin: 0; accent-color: var(--accent); }
+output { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+#status { min-height: 1.5em; margin: 12px 0 0; color: var(--muted); font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  main { width: calc(100% - 24px); margin: 24px auto; }
+  header { flex-wrap: wrap; }
+  h1 { font-size: 15px; }
+  button, select { min-height: 44px; font-size: 16px; }
+  .theme { gap: 6px; }
+  .timeline { gap: 10px; }
+  output { font-size: 12px; }
+}
+
+@media (max-width: 360px) {
+  .theme { width: 100%; margin-top: 4px; }
+  .theme select { flex: 1; }
+}
